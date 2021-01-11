@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>录音室</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/reset.css"/>
+</head>
+<body>
+<style type="text/css">
+    body{
+        margin: 0;
+        background-color: #c27d7d;
+    }
+</style>
+<div align="center" style="position:relative;top:120px">
+    <h1>你的山盟海誓   有我见证</h1>
+    <button onclick="funStart(this);" title="在按下之前，你真的确认好想要说些什么了吗？" id="btnStart" disabled>录制</button>
+    <button onclick="funStop(this);" title="确认停止了吗？" id="btnStop" disabled>停止</button>
+    <button onclick="funUpload(this);" title="不要点我，没功夫搭服务器，上传不了，看看就好" id="btnUpload" disabled>上传</button>
+    <h2>请打开麦克风交流：</h2>
+    <div id="recordingslist"></div>
+    <script src="js/recordmp3.js"></script>
+    <script>
+        var recorder = new MP3Recorder({
+            debug:true,
+            funOk: function () {
+                btnStart.disabled = false;
+                log('我可以帮你录音，但我不会主动保留，主动是留给你做的事。');
+                log(' 生活难免磕碰，记录点点滴滴。');
+            },
+            funCancel: function (msg) {
+                log(msg);
+                recorder = null;
+            }
+        });
+        var mp3Blob;
+
+
+        function funStart(button) {
+            btnStart.disabled = true;
+            btnStop.disabled = false;
+            btnUpload.disabled = true;
+            log('');
+            log('');
+            log('');
+            log('录音开始...');
+            recorder.start();
+        }
+
+        function funStop(button) {
+            recorder.stop();
+            btnStart.disabled = false;
+            btnStop.disabled = true;
+            btnUpload.disabled = false;
+            log('录音结束，MP3导出中...');
+            recorder.getMp3Blob(function (blob) {
+                log('MP3导出成功');
+                log('');
+                log('');
+                log('');
+
+                mp3Blob = blob;
+                var url = URL.createObjectURL(mp3Blob);
+                var div = document.createElement('div');
+                var au = document.createElement('audio');
+                var hf = document.createElement('a');
+
+                au.controls = true;
+                au.src = url;
+                hf.href = url;
+
+                var date=new Date;
+                var year=date.getFullYear();
+                var month=date.getMonth()+1;
+                month =(month<10 ? "0"+month:month);
+                var day=date.getDate();
+                var week=date.getDay();
+                var arr=new Array("星期日","星期六","星期五","星期四","星期三","星期二","星期一");
+                var hour=date.getHours();
+                var minute=date.getMinutes();
+                var second=date.getSeconds();
+                var time=year+'-'+month+'-'+day
+                    +'-'+arr[week]+' '+((hour>12)?"下午":"上午")+hour+"点"+((minute<10)?"0":"")+minute+((second<10)?"0":"")+"分"+second+"秒";
+
+                hf.download = time + '那时我对你说的话' + '.mp3';
+                hf.innerHTML = hf.download;
+                div.appendChild(au);
+                div.appendChild(hf);
+                recordingslist.appendChild(div);
+            });
+        }
+
+        function log(str) {
+            recordingslist.innerHTML += str + '<br/>';
+        }
+
+        function funUpload() {
+            var fd = new FormData();
+            var mp3Name = encodeURIComponent('audio_recording_' + new Date().getTime() + '.mp3');
+            fd.append('mp3Name', mp3Name);
+            fd.append('file', mp3Blob);
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    recordingslist.innerHTML += '上传成功：<a href="' + xhr.responseText + '" target="_blank">' + mp3Name + '</a>';
+                }
+            };
+
+            xhr.open('POST', 'upload.ashx');
+            xhr.send(fd);
+        }
+    </script>
+</div>
+</body>
+</html>

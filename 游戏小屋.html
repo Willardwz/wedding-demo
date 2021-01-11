@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>游戏小屋</title>
+    <meta http-equiv="content" content="text/html" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+
+<body>
+<!--小黄鸭动图加载-->
+<div id="box">
+    <img class="image" src="images/1.gif" style="position:absolute;left:50px;top:50px;z-index:1;">
+    <img class="image" src="images/2.gif" style="position:absolute;left:250px;top:250px;z-index:1;">
+    <img class="image" src="images/3.gif" style="position:absolute;right:50px;top:50px;z-index:1;">
+    <img class="image" src="images/4.gif" style="position:absolute;right:250px;top:250px;z-index:1;">
+    <img class="image" src="images/5.gif" style="position:absolute;right:450px;top:50px;z-index:1;">
+</div>
+<script>
+    var aImg = document.querySelectorAll(".img");
+    var oBox = document.getElementById("box");
+
+    var arr=[1,2,3,4,5,6];
+    var len = arr.length;
+
+    for (var i=0;i<len ;i++ ){
+        random(i)
+    }
+
+    function random(i){
+        var mun = Math.ceil(Math.random()*6);
+        aImg[i].src = mun+".gif";
+    }
+
+    oBox.onclick = function(e){
+        e = e || window.event;
+        var mun2 = Math.ceil(Math.random()*6);
+        e.target.src = mun2+".gif";
+    }
+</script>
+
+<!--网易云播放器加载-->
+<div align="center" style="position:relative;top:520px;left:210px;";>
+    <button onclick="window.open('https://music.163.com/#/my/m/music/playlist?id=3057101416')">
+        欢迎来参观小钢炮的网易云小屋
+    </button>
+</div>
+
+<div id="contentdiv">
+    <div id="startdiv">
+        <button onclick="begin()">开始游戏</button>
+    </div>
+    <div id="maindiv">
+        <div id="scorediv">
+            <label>分数：</label>
+            <label id="label">0</label>
+        </div>
+        <div id="suspenddiv">
+            <button>继续</button><br/>
+            <button>重新开始</button><br/>
+            <button>回到主页</button>
+        </div>
+        <div id="enddiv">
+            <p class="plantext">爱心互动大战分数</p>
+            <p id="planscore">0</p>
+            <div><button onclick="jixu()">继续互动</button></div>
+        </div>
+    </div>
+</div>
+<div align="center" style="position:relative;top:620px">
+    <a href="不如意黑洞.html" target="_blank" >爱情也像玩游戏一样，时间长了都会归于平淡无奇</a>
+    <div align="center" style="position:relative;top:-100px">
+        <!--        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86-->
+        <!--                src="https://music.163.com/outchain/player?type=2&id=1463165983&auto=1&height=66">-->
+        <!--        </iframe>-->
+    </div>
+</div>
+
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

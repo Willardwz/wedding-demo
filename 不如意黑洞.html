@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="导航，导航工具">
+  <meta name="description" content="导航">
+  <title>不如意黑洞</title>
+  <style type="text/css">
+    body{
+      margin: 0;
+      background-color: #090606;
+    }
+    .warp{
+      position: relative;
+      width: 1200px;
+      height: 1200px;
+      margin: 0 auto;
+    }
+    .blackhole{
+      transform: scale(0) rotate(0deg);
+      animation: rote 7s linear;
+    }
+    @keyframes rote{
+      0%{
+        transform: scale(0) rotate(0deg);
+      }
+      25%{
+        transform: scale(1.5) rotate(180deg);
+      }
+      50%{
+        transform: scale(2) rotate(360deg);
+      }
+      75%{
+        transform: scale(1.5) rotate(180deg);
+      }
+      100%{
+        transform: scale(0) rotate(0deg);
+      }
+    }
+    .img{
+      position: absolute;
+      transition: 6s 1s;
+    }
+    .img:nth-child(2){
+      left: 50px;
+      top: 100px;
+    }
+    .img:nth-child(3){
+      left: 50px;
+      top: 250px;
+    }
+    .img:nth-child(4){
+      left: 50px;
+      top: 400px;
+    }
+    .img:nth-child(5){
+      left: 50px;
+      top: 550px;
+    }
+    .img:nth-child(6){
+      left: 900px;
+      top: 100px;
+    }
+    .img:nth-child(7){
+      left: 900px;
+      top: 250px;
+    }
+    .img:nth-child(8){
+      left: 900px;
+      top: 400px;
+    }
+    .img:nth-child(9){
+      left: 900px;
+      top: 550px;
+    }
+  </style>
+</head>
+<body>
+<div align="center" style="position:relative;top:-20px">
+  <h1>爱情进阶的最真实状态其实就是柴米油盐的生活</h1>
+  <h1>你爱我的同时我也爱你</h1>
+  <h1>可爱，不是长久之计；可爱你，却是长久之计</h1>
+  <a href="录音室.html" target="_blank" >情话一句话不够，那就进来说</a>
+</div>
+
+<div class="warp">
+  <img class='blackhole' src="images/blackhole.png" width='1200' height='1200' alt="黑洞图片" />
+  <img class='img' src="images/1.jpg" alt="小图片" width="80" height="80" />
+  <img class='img' src="images/2.jpg" alt="小图片" width="80" height="80" />
+  <img class='img' src="images/3.jpg" alt="小图片" width="80" height="80" />
+  <img class='img' src="images/4.jpg" alt="小图片" width="80" height="80" />
+  <img class='img' src="images/5.jpg" alt="小图片" width="80" height="80" />
+  <!--  <img class='img' src="images/6.jpg" alt="小图片" width="80" height="80" />-->
+  <!--  <img class='img' src="images/7.jpg" alt="小图片" width="80" height="80" />-->
+  <!--  <img class='img' src="images/8.jpg" alt="小图片" width="80" height="80" />		-->
+</div>
+<script>
+  var oImgs = document.querySelectorAll(".img");
+  for (var i = 0; i < oImgs.length; i++) {
+    setTimeout(function (i) {
+      oImgs[i].style.cssText = "top:560px;left:560px; transform:scale(0);";
+    },150 * i,i);
+  }
+</script>
+</body>
+</html>

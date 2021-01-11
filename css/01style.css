@@ -1,0 +1,77 @@
+body{
+    background-color: #950c0c;
+}
+h1{
+    height: 50px;
+    line-height: 45px;
+    border:solid #7e70b8;
+}
+.container{
+    width: 920px;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+.container>img{
+    position: absolute;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+    background-color: #f8f2f2;
+    transition: all 2s;
+}
+.pic1{
+    top: 90px;
+    right: -280px;
+    transform: rotate(-6deg);
+}
+.pic2{
+    top: 90px;
+    left: 617px;
+    bottom: 180px;
+    transform: rotate(6deg);
+}
+.pic3{
+    top: 90px;
+    left: 325px;
+    transform: rotate(0deg);
+}
+.pic4{
+    top: 90px;
+    left: 33px;
+    transform: rotate(-6deg);
+}
+.pic5{
+    top: 90px;
+    left: -277px;
+    transform: rotate(6deg);
+}
+.pic6{
+    top: 0;
+    right: 0;
+    transform: rotate(20deg);
+}
+.pic7{
+    left: -45px;
+    bottom: 0;
+    transform: rotate(-10deg);
+}
+.pic8{
+    bottom: 0;
+    right: 155px;
+    transform: rotate(20deg);
+}
+.pic9{
+    right: 30px;
+    bottom: -30px;
+    transform: rotate(5deg);
+}
+.pic10{
+    left: 300px;
+    bottom: -10px;
+    transform: rotate(-10deg);
+}
+.container>img:hover{
+    transform: scale(1.1);
+    z-index: 66;
+    box-shadow: 0 15px 30px rgba(0,0,0,.2);
+}

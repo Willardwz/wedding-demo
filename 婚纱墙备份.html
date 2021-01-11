@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>婚纱墙</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/01style.css"/>
+
+    <!--1、淡入淡出-->
+    <!--    <style>-->
+    <!--        *{-->
+    <!--            padding: 0;-->
+    <!--            margin: 0;-->
+    <!--        }-->
+    <!--        #slideshow{-->
+    <!--            width: 550px;-->
+    <!--            height: 600px;-->
+    <!--            margin: 0 auto; /*设置在页面水平居中*/-->
+    <!--            overflow: hidden;-->
+    <!--            position: relative;-->
+    <!--        }-->
+    <!--        #slideshow img{-->
+    <!--            width: 160px;-->
+    <!--            position: absolute; /*图片采取绝对定位，均位于左上角，重叠在一起*/-->
+    <!--            top: 20px;-->
+    <!--            left: 105px;-->
+    <!--            opacity: 0; /*初始不透明度为0，图片都看不见*/-->
+    <!--            transition: opacity 3s linear; /*&#45;&#45;重点&#45;&#45;定义一个关于透明度的transition*/-->
+    <!--        }-->
+    <!--        #slideshow img.active{-->
+    <!--            opacity: 1; /*有active类的图片不透明度为1，即显示图片*/-->
+    <!--        }-->
+    <!--    </style>-->
+    <!--淡入淡出-->
+</head>
+<body>
+
+
+
+<!--<style>-->
+<!--    div{-->
+<!--    width:280px;-->
+<!--    height:200px;-->
+<!--    background-image:url(image/1.jpg);-->
+<!--    }-->
+<!--</style>-->
+<div align="center" style="position:relative;top:20px">
+    <h1>祝新娘：徐琦女士 新郎：刘聪先生新婚快乐！暮雪白头！</h1>
+    <h2>Congratulations to the bride: Ms. Xu Qi, bridegroom: Mr. Liu Cong, happy marriage! White head in the evening!</h2>
+</div>
+<!--<img src="image/1.jpg" id="image" width="350px" height="580px" >-->
+
+<!--淡入淡出-->
+<!--<div id="slideshow">-->
+<!--    &lt;!&ndash; 插入轮播的图片们 &ndash;&gt;-->
+<!--    <img class="active" src="image/1.jpg"  style="width: 330px;height:520px" />-->
+<!--    <img src="image/2.jpg" alt="" class="pic2" style="width: 330px;height:520px" />-->
+<!--    <img src="image/3.jpg" alt="" class="pic3" style="width: 330px;height:520px" />-->
+<!--</div>-->
+<!--<script>-->
+<!--function slideshow() {-->
+<!--  var slideshow=document.getElementById("slideshow"),-->
+<!--  imgs=slideshow.getElementsByTagName("img"), //得到图片们-->
+
+<!--  current=0; //current为当前活跃的图片编号-->
+
+<!--  function slideOff() {-->
+<!--    imgs[current].className=""; //图片淡出-->
+
+<!--  }-->
+<!--  function slideOn() {-->
+<!--    imgs[current].className="active"; //图片淡入-->
+
+<!--  }-->
+
+<!--  function changeSlide() { //切换图片的函数-->
+<!--    slideOff();-->
+<!--    current++; //自增1-->
+<!--    if(current>=imgs.length) current=0;-->
+<!--    slideOn();-->
+<!--  }-->
+
+<!--  //每3s调用changeSlide函数进行图片轮播-->
+<!--  var slideon=setInterval(changeSlide,6000);-->
+
+<!--  slideshow.onmouseover=function () {-->
+<!--    clearInterval(slideon); //当鼠标移入时清除轮播事件-->
+<!--  }-->
+<!--  slideshow.onmouseout=function () {-->
+<!--    slideon=setInterval(changeSlide,1500); //当鼠标移出时重新开始轮播事件-->
+<!--  }-->
+<!--}-->
+
+<!--slideshow();-->
+<!--</script>-->
+
+<!--自动轮播图-->
+<!--<script>-->
+<!--           var arr=new Array()-->
+<!--            arr[0]="image/1.jpg" style="width: 550px;height:380px";-->
+<!--            arr[1]="image/2.jpg" style="width: 550px;height:380px";-->
+<!--            arr[2]="image/3.jpg" style="width: 550px;height:380px";-->
+<!--            var i=0;-->
+<!--            function image()-->
+<!--            {-->
+<!--                var image=document.getElementById("image");-->
+<!--                image.src=arr[i];-->
+<!--                i++;-->
+<!--                if(i>2){i=0};-->
+<!--            };-->
+<!--            //设置图片定时轮播-->
+<!--            setInterval(function(){-->
+<!--            image();-->
+<!--            },3000);-->
+<!--</script>-->
+
+<!--<div align="center" style="position:relative;top:200px">-->
+<!--    <a href="游戏小屋.html" target="_blank" >不管心情好与坏，要不先来局小游戏叭~</a>-->
+<!--    <div align="center" style="position:relative;top:-100px">-->
+<!--        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86-->
+<!--                src="https://music.163.com/outchain/player?type=2&id=1463165983&auto=1&height=66">-->
+<!--        </iframe>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--2、半动态排版-->
+<div class="container">
+    <img src="images/1.jpg" alt="" class="pic1" style="width: 250px;height:380px"/>
+    <img src="images/2.jpg" alt="" class="pic2" style="width: 250px;height:380px"/>
+    <img src="images/3.jpg" alt="" class="pic3" style="width: 250px;height:380px"/>
+    <img src="images/4.jpg" alt="" class="pic4" style="width: 250px;height:380px"/>
+    <img src="images/5.jpg" alt="" class="pic5" style="width: 250px;height:380px"/>
+</div>
+<div align="center" style="position:relative;top:183px">
+    <a href="亲朋祝福.html" target="_blank" >康康收到的亲朋好友们的祝福叭~</a>
+    <div align="center" style="position:relative;top:-130px">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                src="https://music.163.com/outchain/player?type=2&id=1463165983&auto=1&height=66">
+        </iframe>
+    </div>
+</div>
+</body>
+</html>

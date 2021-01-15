@@ -1,18 +1,18 @@
-//获得主界面
+    //获得主界面
 var mainDiv=document.getElementById("maindiv");
-//获得开始界面
+    //获得开始界面
 var startdiv=document.getElementById("startdiv");
-//获得游戏中分数显示界面
+    //获得游戏中分数显示界面
 var scorediv=document.getElementById("scorediv");
-//获得分数界面
+    //获得分数界面
 var scorelabel=document.getElementById("label");
-//获得暂停界面
+    //获得暂停界面
 var suspenddiv=document.getElementById("suspenddiv");
-//获得游戏结束界面
+    //获得游戏结束界面
 var enddiv=document.getElementById("enddiv");
-//获得游戏结束后分数统计界面
+    //获得游戏结束后分数统计界面
 var planscore=document.getElementById("planscore");
-//初始化分数
+    //初始化分数
 var scores=0;
 
 /*
@@ -32,9 +32,9 @@ function plan(hp,X,Y,sizeX,sizeY,score,dietime,sudu,boomimage,imagesrc){
     this.plandietime=dietime;
     this.plansudu=sudu;
 //行为
-    /*
-    移动行为
-         */
+/*
+移动行为
+     */
     this.planmove=function(){
         if(scores<=50000){
             this.imagenode.style.top=this.imagenode.offsetTop+this.plansudu+"px";
@@ -76,9 +76,9 @@ function bullet(X,Y,sizeX,sizeY,imagesrc){
     this.bulletsizeX=sizeX;
     this.bulletsizeY=sizeY;
 //行为
-    /*
-     移动行为
-     */
+/*
+ 移动行为
+ */
     this.bulletmove=function(){
         this.bulletimage.style.top=this.bulletimage.offsetTop-20+"px";
     }
@@ -269,17 +269,17 @@ function start(){
         mark=0;
     }
 
-    /*
-    移动敌方飞机
-     */
+/*
+移动敌方飞机
+ */
     var enemyslen=enemys.length;
     for(var i=0;i<enemyslen;i++){
         if(enemys[i].planisdie!=true){
             enemys[i].planmove();
         }
-        /*
-         如果敌机超出边界,删除敌机
-         */
+/*
+ 如果敌机超出边界,删除敌机
+ */
         if(enemys[i].imagenode.offsetTop>568){
             mainDiv.removeChild(enemys[i].imagenode);
             enemys.splice(i,1);
@@ -296,22 +296,22 @@ function start(){
         }
     }
 
-    /*
-    创建子弹
-    */
+/*
+创建子弹
+*/
     if(mark%5==0){
-        bullets.push(new oddbullet(parseInt(selfplan.imagenode.style.left)+31,parseInt(selfplan.imagenode.style.top)-10));
+            bullets.push(new oddbullet(parseInt(selfplan.imagenode.style.left)+31,parseInt(selfplan.imagenode.style.top)-10));
     }
 
-    /*
-    移动子弹
-    */
+/*
+移动子弹
+*/
     var bulletslen=bullets.length;
     for(var i=0;i<bulletslen;i++){
         bullets[i].bulletmove();
-        /*
-        如果子弹超出边界,删除子弹
-        */
+/*
+如果子弹超出边界,删除子弹
+*/
         if(bullets[i].bulletimage.offsetTop<0){
             mainDiv.removeChild(bullets[i].bulletimage);
             bullets.splice(i,1);
@@ -319,29 +319,29 @@ function start(){
         }
     }
 
-    /*
-    碰撞判断
-    */
+/*
+碰撞判断
+*/
     for(var k=0;k<bulletslen;k++){
         for(var j=0;j<enemyslen;j++){
             //判断碰撞本方飞机
             if(enemys[j].planisdie==false){
                 if(enemys[j].imagenode.offsetLeft+enemys[j].plansizeX>=selfplan.imagenode.offsetLeft&&enemys[j].imagenode.offsetLeft<=selfplan.imagenode.offsetLeft+selfplan.plansizeX){
-                    if(enemys[j].imagenode.offsetTop+enemys[j].plansizeY>=selfplan.imagenode.offsetTop+40&&enemys[j].imagenode.offsetTop<=selfplan.imagenode.offsetTop-20+selfplan.plansizeY){
-                        //碰撞本方飞机，游戏结束，统计分数
-                        selfplan.imagenode.src="image/本方飞机爆炸.gif";
-                        enddiv.style.display="block";
-                        planscore.innerHTML=scores;
-                        if(document.removeEventListener){
-                            mainDiv.removeEventListener("mousemove",yidong,true);
-                            bodyobj.removeEventListener("mousemove",bianjie,true);
-                        }
-                        else if(document.detachEvent){
-                            mainDiv.detachEvent("onmousemove",yidong);
-                            bodyobj.removeEventListener("mousemove",bianjie,true);
-                        }
-                        clearInterval(set);
-                    }
+                  if(enemys[j].imagenode.offsetTop+enemys[j].plansizeY>=selfplan.imagenode.offsetTop+40&&enemys[j].imagenode.offsetTop<=selfplan.imagenode.offsetTop-20+selfplan.plansizeY){
+                      //碰撞本方飞机，游戏结束，统计分数
+                      selfplan.imagenode.src="image/本方飞机爆炸.gif";
+                      enddiv.style.display="block";
+                      planscore.innerHTML=scores;
+                      if(document.removeEventListener){
+                          mainDiv.removeEventListener("mousemove",yidong,true);
+                          bodyobj.removeEventListener("mousemove",bianjie,true);
+                      }
+                      else if(document.detachEvent){
+                          mainDiv.detachEvent("onmousemove",yidong);
+                          bodyobj.removeEventListener("mousemove",bianjie,true);
+                      }
+                      clearInterval(set);
+                  }
                 }
                 //判断子弹与敌机碰撞
                 if((bullets[k].bulletimage.offsetLeft+bullets[k].bulletsizeX>enemys[j].imagenode.offsetLeft)&&(bullets[k].bulletimage.offsetLeft<enemys[j].imagenode.offsetLeft+enemys[j].plansizeX)){
@@ -357,9 +357,9 @@ function start(){
                         }
                         //删除子弹
                         mainDiv.removeChild(bullets[k].bulletimage);
-                        bullets.splice(k,1);
-                        bulletslen--;
-                        break;
+                            bullets.splice(k,1);
+                            bulletslen--;
+                            break;
                     }
                 }
             }

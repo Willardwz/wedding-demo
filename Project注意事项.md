@@ -13,6 +13,6 @@ The wedding of Xu Qi and Liu Cong
                                      
                                      
                                      
-                                     peace and love
+                                     Peace and Love
                                      
                                            致谢

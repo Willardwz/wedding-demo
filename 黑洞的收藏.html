@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="导航，导航工具">
+  <meta name="description" content="导航">
+  <title>黑洞的收藏</title>
+  <style type="text/css">
+	body{
+	  margin: 0;
+      background-color: #090606;
+	}
+	.warp{
+	  position: relative;
+	  width: 1200px;
+	  height: 1200px;
+	  margin: 0 auto;
+	}
+	.blackhole{
+	  transform: scale(0) rotate(0deg);
+	  animation: rote 8s linear;
+	}
+	@keyframes rote{
+      0%{
+        transform: scale(0) rotate(0deg);
+      }
+      25%{
+        transform: scale(1.5) rotate(180deg);
+      }
+      50%{
+        transform: scale(2) rotate(360deg);
+      }
+      75%{
+        transform: scale(1.5) rotate(180deg);
+      }
+      100%{
+        transform: scale(0) rotate(0deg);
+      }
+    }
+	.img{
+	  position: absolute;
+	  transition: 6s 1s;
+	}
+	.img:nth-child(2){
+	  left: 50px;
+	  top: 100px;
+	}
+	.img:nth-child(3){
+	  left: 50px;
+	  top: 430px;
+	}
+	.img:nth-child(4){
+	  left: 50px;
+	  top: 760px;
+	}
+	.img:nth-child(5){
+	  left: 475px;
+	  top: 100px;
+	}
+	.img:nth-child(6){
+	  left: 475px;
+	  top: 430px;
+	}
+	.img:nth-child(7){
+	  left: 475px;
+	  top: 760px;
+	}
+	.img:nth-child(8){
+	  left: 900px;
+	  top: 100px;
+	}
+	.img:nth-child(9){
+	  left: 900px;
+	  top: 430px;
+	}
+    .img:nth-child(10){
+      left: 900px;
+      top: 760px;
+    }
+  </style>
+</head>
+<body>
+<div align="center" style="position:relative;top:-25px">
+  <h1>爱情进阶最真实的状态其实就是柴米油盐的生活</h1>
+  <h1>你爱我的同时我也爱你</h1>
+  <h1>可爱，不是长久之计；可爱你，却是长久之计</h1>
+  <a href="录音室.html" target="_blank" >一句不够，那就进来说</a>
+</div>
+
+<div class="warp">
+  <img class='blackhole' src="images/blackhole.png" width='1200' height='1200' alt="黑洞图片" />
+  <img class='img' src="images/6.jpg" alt="小图片" width="180" height="280" />
+  <img class='img' src="images/7.jpg" alt="小图片" width="180" height="280" />
+  <img class='img' src="images/8.jpg" alt="小图片" width="180" height="280" />
+  <img class='img' src="images/9.jpg" alt="小图片" width="180" height="280" />
+  <img class='img' src="images/10.jpg" alt="小图片" width="180" height="280" />
+  <img class='img' src="images/11.jpg" alt="小图片" width="180" height="280" />
+  <img class='img' src="images/12.jpg" alt="小图片" width="180" height="280" />
+  <img class='img' src="images/13.jpg" alt="小图片" width="180" height="280" />
+  <img class='img' src="images/14.jpg" alt="小图片" width="180" height="280" />
+</div>
+<script>
+  var oImgs = document.querySelectorAll(".img");
+  for (var i = 0; i < oImgs.length; i++) {
+	setTimeout(function (i) {
+	  oImgs[i].style.cssText = "top:460px;left:510px; transform:scale(0);";
+	},150 * i,i);
+  }
+</script>
+<a href="录像室.html" target="_blank" >.</a>
+</body>
+</html>

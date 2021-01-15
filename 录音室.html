@@ -13,7 +13,7 @@
         background-color: #c27d7d;
     }
 </style>
-<div align="center" style="position:relative;top:120px">
+<div align="center" style="position:relative;top:100px">
     <h1>你的山盟海誓   有我见证</h1>
     <button onclick="funStart(this);" title="在按下之前，你真的确认好想要说些什么了吗？" id="btnStart" disabled>录制</button>
     <button onclick="funStop(this);" title="确认停止了吗？" id="btnStop" disabled>停止</button>
@@ -26,8 +26,8 @@
             debug:true,
             funOk: function () {
                 btnStart.disabled = false;
-                log('我可以帮你录音，但我不会主动保留，主动是留给你做的事。');
-                log(' 生活难免磕碰，记录点点滴滴。');
+                log('我可以录音，但我不会主动保留。主动是留给你做的事。');
+                 log('生活难免磕碰，记录点点滴滴。');
             },
             funCancel: function (msg) {
                 log(msg);
@@ -71,17 +71,17 @@
                 hf.href = url;
 
                 var date=new Date;
-                var year=date.getFullYear();
-                var month=date.getMonth()+1;
-                month =(month<10 ? "0"+month:month);
-                var day=date.getDate();
+            　　 var year=date.getFullYear();
+            　　 var month=date.getMonth()+1;
+            　　 month =(month<10 ? "0"+month:month);
+            　　 var day=date.getDate();
                 var week=date.getDay();
                 var arr=new Array("星期日","星期六","星期五","星期四","星期三","星期二","星期一");
                 var hour=date.getHours();
                 var minute=date.getMinutes();
                 var second=date.getSeconds();
-                var time=year+'-'+month+'-'+day
-                    +'-'+arr[week]+' '+((hour>12)?"下午":"上午")+hour+"点"+((minute<10)?"0":"")+minute+((second<10)?"0":"")+"分"+second+"秒";
+            　　 var time=year+'-'+month+'-'+day
+            +'-'+arr[week]+' '+((hour>12)?"下午":"上午")+hour+"点"+((minute<10)?"0":"")+minute+((second<10)?"0":"")+"分"+second+"秒";
 
                 hf.download = time + '那时我对你说的话' + '.mp3';
                 hf.innerHTML = hf.download;

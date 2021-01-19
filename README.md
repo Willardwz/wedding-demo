@@ -7,6 +7,6 @@ The wedding of Xu Qi and Liu Cong
 
 其内部包含亲人肖像照片和视频等，万望大家在替代此项目Demo时，只做学习交流使用，切勿在网上互相流传。
 
-                                     Peace and Love
+                                                   Peace and Love
                                  
-                                       致谢
+                                                         致谢

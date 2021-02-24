@@ -9,4 +9,4 @@ The wedding of Xu Qi and Liu Cong
 
                                                    Peace and Love
                                  
-                                                         致谢
+                                                       respect
